@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Heading from "../../components/Heading/Heading";
 import Flex from "../../components/Box/Flex";
 import { ArrowBackIcon, CloseIcon } from "../../components/Svg";
-import { IconButton } from "../../components/Button";
+import { IconButton, ClosebButton } from "../../components/Button";
 import { InjectedProps } from "./types";
 
 interface Props extends InjectedProps {
@@ -17,7 +17,7 @@ const StyledModal = styled.div`
   background: ${({ theme }) => theme.modal.background};
   box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
   border: 1px solid ${({ theme }) => theme.colors.borderColor};
-  border-radius: 32px;
+  border-radius: ${({ theme }) => theme.radii.small};
   width: 100%;
   z-index: ${({ theme }) => theme.zIndices.modal};
   overflow-y: auto;
@@ -29,11 +29,12 @@ const StyledModal = styled.div`
 `;
 
 const ModalHeader = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #e9eaeb;
   align-items: center;
-  padding: 12px 24px;
+  padding: 20px 24px;
 `;
 
 const ModalTitle = styled(Flex)`
@@ -60,9 +61,9 @@ const Modal: React.FC<Props> = ({
         <Heading>{title}</Heading>
       </ModalTitle>
       {!hideCloseButton && (
-        <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
+        <ClosebButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
           <CloseIcon color="primary" />
-        </IconButton>
+        </ClosebButton>
       )}
     </ModalHeader>
     <Flex flexDirection="column" p={bodyPadding}>
