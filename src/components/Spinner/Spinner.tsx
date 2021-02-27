@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { CoffeeLoading } from "react-loadingg";
+import ReactLoading from 'react-loading';
 import { SpinnerProps } from "./types";
 import { baseColors } from "../../theme/colors";
 
@@ -11,12 +11,11 @@ const Container = styled.div`
 const Spinner: React.FC<SpinnerProps> = ({ size = 160, color = baseColors.primary }) => {
   return (
     <Container>
-      <CoffeeLoading
-        type="Rings"
+      <ReactLoading
+      type="spin"
         color={color}
         height={size}
         width={size}
-        timeout={3000} // 3 secs
       />
     </Container>
   );
