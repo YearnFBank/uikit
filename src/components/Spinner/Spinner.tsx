@@ -1,17 +1,44 @@
 import React from "react";
-import styled from "styled-components";
-import ReactLoading from "react-loading";
+import styled, { keyframes } from "styled-components";
 import { SpinnerProps } from "./types";
 import { baseColors } from "../../theme/colors";
+import AppIcon from "../Svg/Icons/Logo";
 
-const Container = styled.div`
+const Container = styled.div<{ size: number }>`
   position: relative;
+  width: ${(props) => props.size}rem;
+  height: ${(props) => props.size}rem;
+`;
+const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
+const opcacity = keyframes`
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+`;
+const FloatingTokenIcon = styled(AppIcon)`
+  position: absolute;
+  transform: translate(25%, 25%);
+  animation: ${opcacity} 1.5s linear infinite;
 `;
 
-const Spinner: React.FC<SpinnerProps> = ({ size = 160, color = baseColors.primary }) => {
+export const Loader = styled.div<{ size: number; color: string }>`
+  position: absolute;
+  border: 0.4em solid rgba(0, 0, 0, 0.1);
+  border-top: 0.4em solid ${(props) => props.color};
+  border-radius: 50%;
+  width: ${(props) => props.size}rem;
+  height: ${(props) => props.size}rem;
+  animation: ${spin} 1s linear infinite;
+`;
+
+const Spinner: React.FC<SpinnerProps> = ({ size = 4, color = baseColors.primary }) => {
   return (
-    <Container>
-      <ReactLoading type="spin" color={color} height={size} width={size} />
+    <Container size={size}>
+      <Loader color={color} size={size} />
+      <FloatingTokenIcon width={`${size / 1.5}rem`} />
     </Container>
   );
 };
