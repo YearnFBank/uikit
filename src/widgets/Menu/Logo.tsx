@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { LogoIcon } from "../../components/Svg";
 import Flex from "../../components/Box/Flex";
-import { HamburgerIcon, HamburgerCloseIcon, LogoIcon as LogoWithText } from "./icons";
+import { HamburgerIcon, HamburgerCloseIcon } from "./icons";
 import MenuButton from "./MenuButton";
 
 interface Props {
+  appName: string;
   isPushed: boolean;
   isDark: boolean;
   togglePush: () => void;
@@ -31,12 +32,35 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
+const StyledAppName = styled.span<{ isDark: boolean }>`
+  display: flex;
+  align-items: center;
+  max-height: ${({ isDark }) => (isDark ? "#FFF" : "#000")};
+
+  .mobile-icon {
+    width: 32px;
+    ${({ theme }) => theme.mediaQueries.nav} {
+      display: none;
+    }
+  }
+  .desktop-icon {
+    width: 156px;
+    display: none;
+    ${({ theme }) => theme.mediaQueries.nav} {
+      display: block;
+    }
+  }
+`;
+
+const Logo: React.FC<Props> = ({ appName, isPushed, togglePush, isDark, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
       <LogoIcon className="mobile-icon" />
-      <LogoWithText className="desktop-icon" isDark={isDark} />
+      <LogoIcon className="desktop-icon" />
+      <StyledAppName className="desktop-icon" isDark={isDark}>
+        {appName}
+      </StyledAppName>
     </>
   );
 
@@ -50,11 +74,11 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
         )}
       </MenuButton>
       {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="Pancake home page">
+        <StyledLink as="a" href={href} aria-label={`${appName} home page`}>
           {innerLogo}
         </StyledLink>
       ) : (
-        <StyledLink to={href} aria-label="Pancake home page">
+        <StyledLink to={href} aria-label={`${appName} home page`}>
           {innerLogo}
         </StyledLink>
       )}
