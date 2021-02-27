@@ -24,7 +24,12 @@ const StyledLink = styled(Link)`
     }
   }
   .desktop-icon {
-    width: 156px;
+    display: none;
+    ${({ theme }) => theme.mediaQueries.nav} {
+      display: block;
+    }
+  }
+  .desktop-name {
     display: none;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: block;
@@ -35,21 +40,9 @@ const StyledLink = styled(Link)`
 const StyledAppName = styled.span<{ isDark: boolean }>`
   display: flex;
   align-items: center;
-  max-height: ${({ isDark }) => (isDark ? "#FFF" : "#000")};
-
-  .mobile-icon {
-    width: 32px;
-    ${({ theme }) => theme.mediaQueries.nav} {
-      display: none;
-    }
-  }
-  .desktop-icon {
-    width: 156px;
-    display: none;
-    ${({ theme }) => theme.mediaQueries.nav} {
-      display: block;
-    }
-  }
+  margin-left: 10px;
+  font-size: 2rem;
+  color: ${({ isDark }) => (isDark ? "#FFF" : "#000")};
 `;
 
 const Logo: React.FC<Props> = ({ appName, isPushed, togglePush, isDark, href }) => {
@@ -58,7 +51,7 @@ const Logo: React.FC<Props> = ({ appName, isPushed, togglePush, isDark, href }) 
     <>
       <LogoIcon className="mobile-icon" />
       <LogoIcon className="desktop-icon" />
-      <StyledAppName className="desktop-icon" isDark={isDark}>
+      <StyledAppName className="desktop-name" isDark={isDark}>
         {appName}
       </StyledAppName>
     </>
