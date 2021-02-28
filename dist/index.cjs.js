@@ -1590,6 +1590,14 @@ var Divider = styled__default['default'].div(templateObject_1$w || (templateObje
 });
 var templateObject_1$w;
 
+var hexToRgb = function (hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? [
+        parseInt(result[1], 16),
+        parseInt(result[2], 16),
+        parseInt(result[3], 16)
+    ] : null;
+};
 var breakpointMap = {
     xs: 370,
     sm: 576,
@@ -1606,13 +1614,15 @@ var mediaQueries = {
     xl: "@media screen and (min-width: " + breakpointMap.xl + "px)",
     nav: "@media screen and (min-width: " + breakpointMap.lg + "px)",
 };
+var primary = hexToRgb(baseColors.primary);
 var shadows = {
-    base: "0px 0px 0px 1px  " + lightColors.primary + ", 0px 0px 0px 4px  " + lightColors.primary,
+    elevation: "box-shadow: 0 3px 3px -2px rgba(" + (primary === null || primary === void 0 ? void 0 : primary.join(',')) + " ,.2),0 3px 4px 0 rgba(" + (primary === null || primary === void 0 ? void 0 : primary.join(',')) + ",.14),0 1px 8px 0 rgba(" + (primary === null || primary === void 0 ? void 0 : primary.join(',')) + ",.12)!important;",
+    base: "0px 0px 0px 1px  " + baseColors.primary + ", 0px 0px 0px 4px  " + baseColors.primary,
     level1: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
-    active: "0 3px 1px -2px " + lightColors.primary + ",0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0  " + lightColors.primary + " ;",
+    active: "0 3px 1px -2px " + baseColors.primary + ",0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0  " + baseColors.primary + " ;",
     success: "0px 0px 0px 1px #31D0AA, 0px 0px 0px 4px rgba(49, 208, 170, 0.2)",
     warning: "0px 0px 0px 1px #ED4B9E, 0px 0px 0px 4px rgba(237, 75, 158, 0.2)",
-    focus: "0px 0px 0px 1px  " + lightColors.primary + ", 0px 0px 0px 4px  " + lightColors.primary,
+    focus: "0px 0px 0px 1px  " + baseColors.primary + ", 0px 0px 0px 4px  " + baseColors.primary,
     inset: "inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1)",
 };
 var spacing = [0, 4, 8, 16, 24, 32, 48, 64];

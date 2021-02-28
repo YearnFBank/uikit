@@ -27,6 +27,7 @@ export type Padding = {
 };
 
 export type Shadows = {
+  elevation: string;
   base: string;
   level1: string;
   active: string;

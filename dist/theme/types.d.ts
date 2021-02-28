@@ -22,6 +22,7 @@ export declare type Padding = {
     circle: string;
 };
 export declare type Shadows = {
+    elevation: string;
     base: string;
     level1: string;
     active: string;
