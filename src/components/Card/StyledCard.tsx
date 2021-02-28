@@ -24,11 +24,26 @@ const getBoxShadow = ({ isActive, isSuccess, isWarning, theme }: StyledCardProps
 
   return theme.card.boxShadow;
 };
+const getBorder = ({ isActive, isSuccess, isWarning, theme }: StyledCardProps) => {
+  if (isWarning) {
+    return theme.colors.warning;
+  }
+
+  if (isSuccess) {
+    return theme.colors.success;
+  }
+
+  if (isActive) {
+    return theme.colors.primary;
+  }
+
+  return "none";
+};
 
 const StyledCard = styled.div<StyledCardProps>`
   background-color: ${({ theme }) => theme.card.background};
-  border: ${({ theme }) => theme.card.boxShadow};
   border-radius: ${({ theme }) => theme.radii.small};
+  border: ${getBorder} 1px solid;
   box-shadow: ${getBoxShadow};
   color: ${({ theme, isDisabled }) => theme.colors[isDisabled ? "textDisabled" : "text"]};
   overflow: hidden;

@@ -10,7 +10,7 @@ const StyledCard = styled.div<StyledCardProps>`
   align-self: baseline;
   background: ${(props) => props.theme.card.background};
   border-radius: ${({ theme }) => theme.radii.small};
-  box-shadow: ${({ theme }) => theme.shadows.base};
+  box-shadow: ${({ theme }) => theme.shadows.elevation};
   display: flex;
   flex-direction: column;
   justify-content: space-around;

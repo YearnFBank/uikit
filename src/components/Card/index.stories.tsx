@@ -8,6 +8,7 @@ import UIKitCardHeader from "./CardHeader";
 import CardBody from "./CardBody";
 import CardFooter from "./CardFooter";
 import Card from "./Card";
+import FarmCard from "./FarmCard";
 
 const Row = styled.div`
   margin-bottom: 32px;
@@ -51,6 +52,9 @@ export const Default: React.FC = () => {
           <CardBody>Disabled</CardBody>
           <CardFooter>Footer</CardFooter>
         </Card>
+      </Row>
+      <Row>
+        <FarmCard>FarmCard</FarmCard>
       </Row>
     </div>
   );
