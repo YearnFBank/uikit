@@ -60,5 +60,5 @@ export default {
   shadows,
   radii,
   zIndices,
-  padding
+  padding,
 };

@@ -6,7 +6,6 @@ interface StyledCardProps extends CardProps {
   theme: DefaultTheme;
 }
 
-
 const StyledCard = styled.div<StyledCardProps>`
   align-self: baseline;
   background: ${(props) => props.theme.card.background};
