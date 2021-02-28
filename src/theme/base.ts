@@ -1,4 +1,4 @@
-import { MediaQueries, Breakpoints, Spacing } from "./types";
+import { MediaQueries, Breakpoints, Spacing, Shadows } from "./types";
 import { lightColors } from "./colors";
 
 export const breakpointMap: { [key: string]: number } = {
@@ -20,7 +20,7 @@ const mediaQueries: MediaQueries = {
   nav: `@media screen and (min-width: ${breakpointMap.lg}px)`,
 };
 
-export const shadows = {
+export const shadows: Shadows = {
   base: `0px 0px 0px 1px  ${lightColors.primary}, 0px 0px 0px 4px  ${lightColors.primary}`,
   level1: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
   active: `0 3px 1px -2px ${lightColors.primary},0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0  ${lightColors.primary} ;`,
