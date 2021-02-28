@@ -24,17 +24,19 @@ export { default as ErrorIcon } from "./Icons/Error";
 export { default as HelpIcon } from "./Icons/Help";
 export { default as InfoIcon } from "./Icons/Info";
 export { default as ListViewIcon } from "./Icons/ListView";
+// simply with same image
 export { default as LogoIcon } from "./Icons/Logo";
-export { default as LogoRoundIcon } from "./Icons/LogoRound";
+export { default as LogoRoundIcon } from "./Icons/Logo";
+export { default as PancakesIcon } from "./Icons/Logo";
+export { default as PancakeRoundIcon } from "./Icons/Logo";
+export { default as ProgressBunny } from "./Icons/Logo";
+
 export { default as MinusIcon } from "./Icons/Minus";
 export { default as NoProfileAvatarIcon } from "./Icons/NoProfileAvatar";
 export { default as OpenNewIcon } from "./Icons/OpenNew";
-export { default as PancakesIcon } from "./Icons/Pancakes";
-export { default as PancakeRoundIcon } from "./Icons/PancakeRound";
 export { default as PrizeIcon } from "./Icons/Prize";
 export { default as RemoveIcon } from "./Icons/Remove";
 export { default as VerifiedIcon } from "./Icons/Verified";
-export { default as ProgressBunny } from "./Icons/ProgressBunny";
 export { default as Won } from "./Icons/Won";
 export { default as Ticket } from "./Icons/Ticket";
 export { default as TicketRound } from "./Icons/TicketRound";
