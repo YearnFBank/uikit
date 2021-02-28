@@ -21,6 +21,7 @@ const mediaQueries: MediaQueries = {
 };
 
 export const shadows = {
+  base: `0px 0px 0px 1px  ${lightColors.primary}, 0px 0px 0px 4px  ${lightColors.primary}`,
   level1: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
   active: `0 3px 1px -2px ${lightColors.primary},0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0  ${lightColors.primary} ;`,
   success: "0px 0px 0px 1px #31D0AA, 0px 0px 0px 4px rgba(49, 208, 170, 0.2)",
@@ -38,6 +39,14 @@ const radii = {
   circle: "50%",
 };
 
+const padding = {
+  small: "2px",
+  default: "16px",
+  card: "32px",
+  farmCard: "24px",
+  circle: "50%",
+};
+
 const zIndices = {
   dropdown: 10,
   modal: 100,
@@ -51,4 +60,5 @@ export default {
   shadows,
   radii,
   zIndices,
+  padding
 };

@@ -18,7 +18,16 @@ export type Radii = {
   circle: string;
 };
 
+export type Padding = {
+  small: string;
+  default: string;
+  card: string;
+  farmCard: string;
+  circle: string;
+};
+
 export type Shadows = {
+  base: string;
   level1: string;
   active: string;
   success: string;
