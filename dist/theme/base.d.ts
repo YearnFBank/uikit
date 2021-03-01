@@ -4,6 +4,7 @@ export declare const breakpointMap: {
 };
 export declare const shadows: Shadows;
 declare const _default: {
+    font: string;
     siteWidth: number;
     breakpoints: Breakpoints;
     mediaQueries: MediaQueries;
