@@ -78,6 +78,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.162",
     "@types/styled-system": "^5.1.10",
+    "bignumber": "^1.1.0",
     "bignumber.js": "^9.0.1",
     "color-convert": "^2.0.1",
     "lodash": "^4.17.20",
