@@ -61,7 +61,7 @@ const zIndices = {
 };
 
 export default {
-  font: "Kanit, sans-serif",
+  font: "Lato, sans-serif",
   siteWidth: 1200,
   breakpoints,
   mediaQueries,

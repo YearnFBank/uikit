@@ -1661,7 +1661,7 @@ var zIndices = {
     modal: 100,
 };
 var base = {
-    font: "Kanit, sans-serif",
+    font: "Lato, sans-serif",
     siteWidth: 1200,
     breakpoints: breakpoints,
     mediaQueries: mediaQueries,
