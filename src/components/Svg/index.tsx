@@ -26,9 +26,9 @@ export { default as InfoIcon } from "./Icons/Info";
 export { default as ListViewIcon } from "./Icons/ListView";
 // simply with same image
 export { default as LogoIcon } from "./Icons/Logo";
-export { default as LogoRoundIcon } from "./Icons/Logo";
+export { default as LogoRoundIcon } from "./Icons/LogoRound";
 export { default as PancakesIcon } from "./Icons/Logo";
-export { default as PancakeRoundIcon } from "./Icons/Logo";
+export { default as PancakeRoundIcon } from "./Icons/LogoRound";
 export { default as ProgressBunny } from "./Icons/Logo";
 
 export { default as MinusIcon } from "./Icons/Minus";
